@@ -25,7 +25,6 @@ const FeaturedRow = ({ id, title, description }) => {
     });
   }, []);
 
-
   return (
     <View>
       <View className="mt-4 flex-row items-center justify-between px-4">
@@ -51,7 +50,7 @@ const FeaturedRow = ({ id, title, description }) => {
             genre={restaurant.type?.name}
             address={restaurant.address}
             short_description={restaurant.short_description}
-            dishes={restaurant.dish}
+            dishes={restaurant.dishes}
             long={restaurant.location?.lng}
             lat={restaurant.location?.lat}
           />

@@ -4,6 +4,7 @@ import { useLocalSearchParams, router } from "expo-router";
 import { urlFor } from "../sanityClient";
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
+import DishRow from "../components/DishRow";
 
 const RestaurantsScreen = () => {
   const {
@@ -19,7 +20,11 @@ const RestaurantsScreen = () => {
     lat,
   } = useLocalSearchParams();
 
+
   const parsedImgUrl = imgUrl ? JSON.parse(imgUrl) : null;
+
+  const parsedDishes = dishes ? JSON.parse(dishes) : null;
+
   return (
     <ScrollView>
       <StatusBar style="dark-content" />
@@ -66,6 +71,25 @@ const RestaurantsScreen = () => {
           <Text className="pl-2 flex-1 text-md font-bold">Have a food allergy?</Text>
           <AntDesign name="right" size={18} color="#00CCBB" />
         </TouchableOpacity>
+      </View>
+
+      <View>
+        <Text className="px-4 pt-6 mb-3 text-xl font-bold">
+          Menu
+        </Text>
+
+        {/* Dishes */}
+
+        {parsedDishes.map((dish) => (
+          <DishRow
+            key={dish._id}
+            id={dish._id}
+            name={dish.name}
+            description={dish.short_description}
+            price={dish.price}
+            image={dish.image} 
+          />
+        ))}
       </View>
     </ScrollView>
   );

@@ -31,8 +31,6 @@ const index = () => {
     })
   }, []);
 
-
-
   return (
     <SafeAreaView className="bg-gray-100 pt-5">
       
