@@ -47,7 +47,7 @@ const RestaurantsScreen = () => {
             <View className="flex-row items-center space-x-1">
               <AntDesign name="star" size={22} color="green" opacity={0.5} />
               <Text className="text-xs text-gray-500">
-                <Text>{rating}</Text>· {genre}
+                <Text>{rating}</Text> · {genre}
               </Text>
             </View>
             <View className="flex-row items-center space-x-1 mt-1">
@@ -57,7 +57,7 @@ const RestaurantsScreen = () => {
                 color="gray"
                 opacity={0.4}
               />
-              <Text className="text-xs text-gray-500 w-48">
+              <Text className="text-xs text-gray-500 w-56">
                 Nearby · {address}
               </Text>
             </View>
@@ -73,7 +73,7 @@ const RestaurantsScreen = () => {
         </TouchableOpacity>
       </View>
 
-      <View>
+      <View className="bg-gray-200">
         <Text className="px-4 pt-6 mb-3 text-xl font-bold">
           Menu
         </Text>
