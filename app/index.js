@@ -14,7 +14,7 @@ import FeaturedRow from "../components/FeaturedRow";
 import sanityClient from "../sanityClient";
 import { StatusBar } from "expo-status-bar";
 
-const index = () => {
+const HomeScreen = () => {
   const [featuredCategories, setFeaturedCategories] = useState([]);
 
   useEffect(() => {
@@ -92,4 +92,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default HomeScreen;
