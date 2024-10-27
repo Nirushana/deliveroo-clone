@@ -12,6 +12,7 @@ import { urlFor } from "../sanityClient";
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import DishRow from "../components/DishRow";
+import BasketIcon from "../components/BasketIcon";
 
 const RestaurantsScreen = () => {
   const {
@@ -32,6 +33,8 @@ const RestaurantsScreen = () => {
   const parsedDishes = dishes ? JSON.parse(dishes) : null;
 
   return (
+    <>
+    <BasketIcon />
     <SafeAreaView>
       <ScrollView>
         <StatusBar style="dark-content" />
@@ -80,7 +83,7 @@ const RestaurantsScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <View className="bg-gray-200">
+        <View className="bg-gray-200 pb-36">
           <Text className="px-4 pt-6 mb-3 text-xl font-bold">Menu</Text>
 
           {/* Dishes */}
@@ -98,6 +101,7 @@ const RestaurantsScreen = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
+    </>
   );
 };
 
